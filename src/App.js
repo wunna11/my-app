@@ -26,46 +26,50 @@ import ReducerCouter from "./hooks/reducer/ReducerCounter";
 import TaskApp from "./hooks/reducer/Task";
 import CheckboxApp from "./components/Form/checkbox";
 import HigherOrderComponent from "./components/hoc";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   const [theme, setTheme] = useState("dark");
 
   return (
-    <ThemeContext.Provider value={theme}>
-      <div className="App">
-        {/* <Form /> */}
-        {/* <Picture /> */}
-        {/*  <EditProfile /> */}
-        {/* <FeedbackForm /> */}
-        {/* <Menu /> */}
-        {/* <Time /> */}
-        {/*<TravelPlan /> */}
-        {/*<MailClient /> */}
-        {/*<MultipleSelect />*/}
-        {/*<ShareState /> */}
-       {/* <FilterSearch />*/}
+    <ErrorBoundary FallbackComponent={ErrorPage}>
+      <ThemeContext.Provider value={theme}>
+        <div className="App">
+          {/* <Form /> */}
+          {/* <Picture /> */}
+          {/*  <EditProfile /> */}
+          {/* <FeedbackForm /> */}
+          {/* <Menu /> */}
+          {/* <Time /> */}
+          {/*<TravelPlan /> */}
+          {/*<MailClient /> */}
+          {/*<MultipleSelect />*/}
+          {/*<ShareState /> */}
+          {/* <FilterSearch />*/}
 
-        {/*<Preserve /> */}
-        {/*<Challenge1 /> */}
-        {/*<Challenge2 /> */}
-        {/*<Challenge3 /> */}
-        {/*<Challenge4 /> */}
-        {/*<Challenge5 /> */}
+          {/*<Preserve /> */}
+          {/*<Challenge1 /> */}
+          {/*<Challenge2 /> */}
+          {/*<Challenge3 /> */}
+          {/*<Challenge4 /> */}
+          {/*<Challenge5 /> */}
 
-        {/*  {theme === 'light' ? (
+          {/*  {theme === 'light' ? (
           <TestContext />
       ) : <h1>Dark Mode</h1>} */}
 
-        {/* <CallBackDemo /> */}
-        {/*   <ReducerCouter />*/}
+          {/* <CallBackDemo /> */}
+          {/*   <ReducerCouter />*/}
 
-        {/* <TaskApp /> */}
-        
-      {/*  <CheckboxApp /> */}
+          {/* <TaskApp /> */}
 
-      <HigherOrderComponent />
-      </div>
-    </ThemeContext.Provider>
+          {/*  <CheckboxApp /> */}
+
+          <HigherOrderComponent />
+        </div>
+      </ThemeContext.Provider>
+    </ErrorBoundary>
   );
 }
 

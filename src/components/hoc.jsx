@@ -11,15 +11,21 @@ const withLogging = (WrappedComponent) => {
 };
 
 const MyComponent = (props) => {
-  return <div>Hello, {props.name}!</div>;
+  return <div>Hello, {props.name}! {title}</div>;
 };
 
+const MyComponent1 = () => {
+  return <div>Bla Bla</div>
+}
+
 const EnhancedComponent = withLogging(MyComponent);
+const EnhancedComponent1 = withLogging(MyComponent1)
 
 export default function HigherOrderComponent() {
   return (
     <div>
       <EnhancedComponent name="Alice" />
+      <EnhancedComponent1 />
     </div>
   );
 }
