@@ -67,6 +67,7 @@ function App() {
           {/*  <CheckboxApp /> */}
 
           <HigherOrderComponent />
+          <p>hello</p>
         </div>
       </ThemeContext.Provider>
     </ErrorBoundary>
